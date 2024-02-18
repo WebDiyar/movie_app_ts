@@ -4,23 +4,23 @@ import { useFetch } from '../../../hooks/useFetch';
 import { UpcomingResponseApi } from '../../../interfacesApi/Upcoming';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../store/store';
-import { Configuration } from '../../../interfacesApi/Configuration';
-import './heroBanner.scss'
 import Img from '../../../components/lazyLoadImage/Img';
 import ContentWrapper from '../../../components/contentWrapper/ContentWrapper';
+import './heroBanner.scss'
 
 const HeroBanner = () => {
     const [background, setBackgroud] = useState<string | undefined>("");
-    const [query, setQuery] = useState("");
+    const [query, setQuery] = useState<string>("");
     const url = useSelector((state: RootState) => state.home.url);
     const navigate = useNavigate();
 
     const {data, loading} = useFetch<UpcomingResponseApi>("/movie/upcoming");
 
     useEffect(() => {
-        const bg = url.backdrop +  data?.results[Math.floor(Math.random() * 20)]?.backdrop_path;
-        setBackgroud(bg);
-    }, [data])
+        const background = url.backdrop +  data?.results[Math.floor(Math.random() * 20)]?.backdrop_path;
+        setBackgroud(background); 
+        console.log(background);
+    }, [data, url])
 
     const handleSearchQuery = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter' && query.length > 0) {
@@ -40,7 +40,7 @@ const HeroBanner = () => {
 
             <div className="opacity-layer"></div>
 
-            <ContentWrapper>
+            <ContentWrapper >
                 <div className="heroBannerContent">
                     <span className="title">Welcome!</span>
                     <span className="subTitle">Millions of movies, TV shows and people to discover. Explore now.</span>

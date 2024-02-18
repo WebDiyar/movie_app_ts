@@ -1,9 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+interface UrlState {
+    backdrop: string;
+    poster: string;
+    profile: string;
+}
 
 export const homeSlice = createSlice({
     name: "homeSlice",
     initialState: {
-        url: {},
+        url: {} as UrlState, 
         genres: {},
     },
     reducers: {
