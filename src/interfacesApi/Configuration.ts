@@ -7,7 +7,6 @@ interface Images {
     profile_sizes: string[];
     still_sizes: string[];
 }
-
 export interface Configuration {
     images: Images;
     change_keys: string[];
