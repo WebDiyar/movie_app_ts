@@ -10,7 +10,7 @@ import Caresoul from "../../../components/carousel/Carousel";
 const Trendig = () => {
     const [endpoint, setEndpoint] = useState<string>("day");
     const { data, loading } = useFetch<TrendingResponse>(`/trending/all/${endpoint}`);
-
+    console.log(data);
     const ontabChange = (tab: string) => {
         setEndpoint(tab === "Day" ? "day" : "week");
     }

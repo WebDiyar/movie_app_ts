@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
 import { fetchingDataFromApi } from './utils/api'
 import { useDispatch, useSelector } from 'react-redux';
-import { getApiConfiguration } from './store/homeSlice';
+import { getApiConfiguration, getGenres } from './store/homeSlice';
 import { RootState, AppDispatch } from './store/store';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Configuration } from './interfacesApi/Configuration';
+import { Genre, Genres, AllGenres } from './interfacesApi/Genres';
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
@@ -13,6 +14,8 @@ import SearchResult from "./pages/searchResult/SearchResult";
 import Explore from "./pages/explore/Explore";
 import PageNotFound from "./pages/404/PageNotFound";
 import './App.scss'
+import { VscLaw } from 'react-icons/vsc';
+import { all } from 'axios';
 
 function App() {
   const { url } = useSelector((state: RootState) => state.home);
@@ -21,6 +24,7 @@ function App() {
 
   useEffect(() => {
     fetchApiConfig();
+    genresCall();
   }, []);
 
   const fetchApiConfig = () => {
@@ -35,6 +39,28 @@ function App() {
 
         dispatch(getApiConfiguration(url)) // configuration data
       });
+  }
+
+  const genresCall = async () => {
+    try {
+      const endPoints: string[] = ["tv", "movie"];
+      const allGenres: AllGenres = {};
+      const promises = endPoints.map(url =>
+        fetchingDataFromApi<{ genres: Genre[] }>(`/genre/${url}/list`)
+      );
+
+      const data = await Promise.all(promises);
+      data.forEach(response => {
+        response.genres.forEach(genre => {
+          allGenres[genre.id] = genre;
+        })
+      })
+
+      dispatch(getGenres(allGenres));
+    } catch (error) {
+      console.error(error);
+      return error;
+    }
   }
 
   return (

@@ -4,12 +4,16 @@ interface UrlState {
     poster: string;
     profile: string;
 }
+interface Genre{
+    id: number;
+    name: string;
+}
 
 export const homeSlice = createSlice({
     name: "homeSlice",
     initialState: {
         url: {} as UrlState, 
-        genres: {},
+        genres: {} as Genre[],
     },
     reducers: {
         getApiConfiguration: (state, action) => {

@@ -8,7 +8,8 @@ import ContentWrapper from "../contentWrapper/ContentWrapper";
 import Img from "../lazyLoadImage/Img";
 import PosterFallback from "../../../public/assets/no-poster.png";
 import { Movie } from "../../interfacesApi/Trending";
-
+import CircleRating from "../circleRating/CircleRating";
+import Genres from "../genres/Genres";
 import "./carousel.scss"
 
 interface CarouselProps{
@@ -58,6 +59,8 @@ const Carousel: FC<CarouselProps> = ({ data, loading }) => {
                                 <div key={item.id} className="carouselItem" >
                                     <div className="posterBlock">
                                         <Img src={posterUrl} />
+                                        <CircleRating rating={Number(item.vote_average.toFixed(1))} />
+                                        <Genres data={item.genre_ids.slice(0, 2)} />
                                     </div>
                                     <div className="textBlock">
                                         <span className="title">{item?.title || item?.name}</span>

@@ -21,7 +21,7 @@ const HeroBanner = () => {
         setBackgroud(background); 
         console.log(background);
     }, [data, url])
-
+    
     const handleSearchQuery = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter' && query.length > 0) {
             navigate(`/search/${query}`);
