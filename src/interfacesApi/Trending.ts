@@ -9,7 +9,7 @@ export interface Movie {
     adult: boolean;
     backdrop_path: string;
     id: number;
-    title: string;
+    title?: string;
     name?: string;
     original_language: string;
     original_title: string;

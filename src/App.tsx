@@ -5,7 +5,7 @@ import { getApiConfiguration, getGenres } from './store/homeSlice';
 import { RootState, AppDispatch } from './store/store';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Configuration } from './interfacesApi/Configuration';
-import { Genre, Genres, AllGenres } from './interfacesApi/Genres';
+import { Genre, AllGenres } from './interfacesApi/Genres';
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
@@ -14,8 +14,6 @@ import SearchResult from "./pages/searchResult/SearchResult";
 import Explore from "./pages/explore/Explore";
 import PageNotFound from "./pages/404/PageNotFound";
 import './App.scss'
-import { VscLaw } from 'react-icons/vsc';
-import { all } from 'axios';
 
 function App() {
   const { url } = useSelector((state: RootState) => state.home);

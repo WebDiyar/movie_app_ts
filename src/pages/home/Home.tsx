@@ -1,6 +1,8 @@
 
 import HeroBanner from './heroBanner/HeroBanner'
 import Trendig from './trending/Trendig'
+import Popular from './popular/Popular'
+import TopRated from './TopRated/TopRated'
 import './home.scss'
 
 const Home = () => {
@@ -8,9 +10,8 @@ const Home = () => {
     <div className='homePage'>
       <HeroBanner />
       <Trendig />
-      <div style={{height: 1000}}>
-
-      </div>
+      <Popular />
+      <TopRated/>
     </div>
   )
 }

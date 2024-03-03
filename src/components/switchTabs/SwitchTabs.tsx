@@ -2,7 +2,7 @@ import { useState, FC } from "react";
 import "./switchTabs.scss";
 
 interface SwitchTabsProps {
-    data: ["Day", "Week"];
+    data: string[];
     ontabChange: (tab: string) => void;
 }
 
