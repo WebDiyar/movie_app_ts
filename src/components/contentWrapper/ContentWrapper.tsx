@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'; 
 import './contentWrapper.scss';
+
 interface ContentWrapperProps {
     children: ReactNode; 
 }

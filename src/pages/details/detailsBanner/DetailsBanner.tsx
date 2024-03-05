@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import dayjs from "dayjs";
-import "./detailsBanner.scss";
-import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
-import { useFetch } from "../../../hooks/useFetch.ts";
-import Genres from "../../../components/genres/Genres";
-import CircleRating from "../../../components/circleRating/CircleRating";
-import Img from "../../../components/lazyLoadImage/Img";
-import PosterFallback from "/assets/no-poster.png"
 import { PlayIcon } from "../Playbtn";
-import VideoPopup from "../../../components/videoPopup/VideoPopup";
 import { RootState } from "../../../store/store.ts";
 import { MovieOrTvDetails } from "../../../interfacesApi/Details.ts";
 import { MovieAndTvVideo } from "../../../interfacesApi/MovieAndTvVideos.ts";
 import { Crew } from "../../../interfacesApi/MovieAndTvCredits.ts";
+import { useFetch } from "../../../hooks/useFetch.ts";
+import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
+import CircleRating from "../../../components/circleRating/CircleRating";
+import VideoPopup from "../../../components/videoPopup/VideoPopup";
+import Genres from "../../../components/genres/Genres";
+import Img from "../../../components/lazyLoadImage/Img";
+import PosterFallback from "/assets/no-poster.png"
+import dayjs from "dayjs";
+import "./detailsBanner.scss";
 
 interface Props{
     video: MovieAndTvVideo | undefined;
@@ -22,17 +22,14 @@ interface Props{
 }
 
 const DetailsBanner = ({ video, crew }: Props) => {
+    const url = useSelector((state: RootState) => state.home.url);
     const [show, setShow] = useState<boolean>(false);
     const [videoId, setVideoId] = useState<string | number | null | undefined>(null);
 
     const { mediaType, id } = useParams();
     const { data, loading } = useFetch<MovieOrTvDetails | null>(`/${mediaType}/${id}`);
-    console.log(data);
-
-    const url = useSelector((state: RootState) => state.home.url);
 
     const genres = data?.genres.map((g) => g.id);
-
     const director = crew?.filter((f) => f.job === 'Director') || [];
     const writer = crew?.filter( (f) => f.job === "Screenplay" || f.job === "Story" || f.job === "Writer") || [];
 

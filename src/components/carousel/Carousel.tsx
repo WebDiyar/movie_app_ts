@@ -2,19 +2,16 @@ import { useRef, FC } from "react";
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import dayjs from "dayjs";
 import { RootState } from "../../store/store";
+import { GeneralMedia } from "../../interfacesApi/TrendingAndPopular";
+import { MovieOrTvDetails } from "../../interfacesApi/Details";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import Img from "../lazyLoadImage/Img";
 import PosterFallback from "/assets/no-poster.png";
-// import { Movie } from "../../interfacesApi/Trending";
-// import { MoviePopular, TVShowPopular } from "../../interfacesApi/Popular";
-// import { MoviePopular, TVShowPopular, Movie } from "../../interfacesApi/TrendingPopular";
-import { GeneralMedia } from "../../interfacesApi/TrendingAndPopular";
 import CircleRating from "../circleRating/CircleRating";
 import Genres from "../genres/Genres";
-import { MovieOrTvDetails } from "../../interfacesApi/Details";
-import "./carousel.scss"
+import dayjs from "dayjs";
+import "./carousel.scss";
 
 interface CarouselProps{
     data: (GeneralMedia | MovieOrTvDetails)[]  | undefined;
@@ -42,9 +39,6 @@ const Carousel: FC<CarouselProps> = ({ data, loading, endpoint, title}) => {
             behavior: "smooth",
         })
     }
-
-    const container = carouselContainer.current;
-    console.log(container);
 
     const skItem = () => {
         return (
@@ -102,8 +96,6 @@ const Carousel: FC<CarouselProps> = ({ data, loading, endpoint, title}) => {
                         {skItem()}
                     </div>
                 )}
-
-
             </ContentWrapper>
         </div>
     )

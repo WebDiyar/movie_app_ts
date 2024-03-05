@@ -14,6 +14,7 @@ const Genres = ({ data }: IGenres_id) => {
       {
         data?.map((g) => {
           if (!genres[g]?.name) return;
+          
           return (
             <div className="genre" key={g}>
               {genres[g]?.name}

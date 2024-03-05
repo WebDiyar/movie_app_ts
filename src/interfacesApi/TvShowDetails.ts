@@ -12,7 +12,7 @@ export interface TvShowDetails {
     last_air_date: string;
     last_episode_to_air: LastEpisodeToAir;
     name: string;
-    next_episode_to_air: null; // Assuming always null based on provided data
+    next_episode_to_air: null;
     networks: Network[];
     number_of_episodes: number;
     number_of_seasons: number;

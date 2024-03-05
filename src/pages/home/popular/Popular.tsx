@@ -1,15 +1,14 @@
 import { useState } from "react";
-import Caresoul from "../../../components/carousel/Carousel";
 import { useFetch } from "../../../hooks/useFetch";
 import { MovieResponse, TVShowResponse } from "../../../interfacesApi/Popular";
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 import SwitchTabs from "../../../components/switchTabs/SwitchTabs";
+import Caresoul from "../../../components/carousel/Carousel";
 import './popular.scss';
 
 const Popular = () => {
     const [endpoint, setEndpoint] = useState<string>("movie");
     const { data, loading } = useFetch<MovieResponse | TVShowResponse | undefined>(`/${endpoint}/popular`);
-    console.log(data);
 
     const ontabChange = (tab: string) => {
         setEndpoint(tab === "Movies" ? "movie" : "tv");

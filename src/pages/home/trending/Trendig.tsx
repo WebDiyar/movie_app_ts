@@ -1,16 +1,15 @@
 import { useState } from "react";
-import "./trending.scss"; 
-import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
-import SwitchTabs from "../../../components/switchTabs/SwitchTabs";
 import { useFetch } from "../../../hooks/useFetch";
 import { TrendingResponse } from "../../../interfacesApi/Trending";
+import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
+import SwitchTabs from "../../../components/switchTabs/SwitchTabs";
 import Caresoul from "../../../components/carousel/Carousel";
-
+import "./trending.scss"; 
 
 const Trendig = () => {
     const [endpoint, setEndpoint] = useState<string>("day");
     const { data, loading } = useFetch<TrendingResponse | undefined>(`/trending/all/${endpoint}`);
-    console.log(data);
+    
     const ontabChange = (tab: string) => {
         setEndpoint(tab === "Day" ? "day" : "week");
     }

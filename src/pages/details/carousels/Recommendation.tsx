@@ -1,7 +1,6 @@
-import Carousel from "../../../components/carousel/Carousel";
 import { useFetch } from "../../../hooks/useFetch";
 import { AllDataMovieOrTvDetails } from "../../../interfacesApi/Details";
-
+import Carousel from "../../../components/carousel/Carousel";
 interface Props {
     mediaType: string | undefined;
     id: string | undefined;

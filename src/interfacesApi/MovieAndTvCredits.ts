@@ -1,3 +1,8 @@
+export interface MovieAndTVShowCreditsResponse {
+    cast: Cast[];
+    crew: Crew[];
+    id: number;
+}
 export interface Cast {
     adult: boolean;
     gender: number;
@@ -25,10 +30,4 @@ export interface Crew {
     credit_id: string;
     department: string;
     job: string;
-}
-
-export interface MovieAndTVShowCreditsResponse {
-    cast: Cast[];
-    crew: Crew[];
-    id: number;
 }

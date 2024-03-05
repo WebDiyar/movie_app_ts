@@ -15,8 +15,8 @@ import PageNotFound from "./pages/404/PageNotFound";
 import './App.scss'
 
 function App() {
-  const { url } = useSelector((state: RootState) => state.home);
-  console.log(url);
+  const url = useSelector((state: RootState) => state.home.url);
+  console.log('Url: ', url);
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
@@ -34,7 +34,7 @@ function App() {
           profile: result.images.secure_base_url + "original",
         }
 
-        dispatch(getApiConfiguration(url)) // configuration data
+        dispatch(getApiConfiguration(url));
       });
   }
 

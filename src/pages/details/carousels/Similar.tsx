@@ -1,7 +1,6 @@
-import Carousel from "../../../components/carousel/Carousel";
 import { useFetch } from "../../../hooks/useFetch";
 import { AllDataMovieOrTvDetails } from "../../../interfacesApi/Details";
-
+import Carousel from "../../../components/carousel/Carousel";
 interface Props{
     mediaType: string | undefined;
     id: string | undefined;
@@ -9,7 +8,6 @@ interface Props{
 
 const Similar = ({ mediaType, id }: Props) => {
     const { data, loading } = useFetch<AllDataMovieOrTvDetails>(`/${mediaType}/${id}/similar`);
-    console.log(data);
     const title = mediaType === "tv" ? "Similar TV Shows" : "Similar Movies";
 
     return (

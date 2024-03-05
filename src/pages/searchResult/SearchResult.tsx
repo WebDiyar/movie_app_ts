@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
-import InfiniteScroll from "react-infinite-scroll-component";
+import { AllDataMovieOrTvDetails } from "../../interfacesApi/Details";
 import { fetchingDataFromApi } from "../../utils/api";
+import InfiniteScroll from "react-infinite-scroll-component";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
-import { AllDataMovieOrTvDetails } from "../../interfacesApi/Details";
 import './searchResult.scss';
 
 const SearchResult = () => {
@@ -13,7 +13,6 @@ const SearchResult = () => {
     const [pageNum, setPageNum] = useState<number>(1);
     const [loading, setLoading] = useState<boolean>(false);
     const { query } = useParams();
-    console.log(query);
 
     const fetchInitialData = useCallback(() => {
         setLoading(true);
@@ -22,7 +21,6 @@ const SearchResult = () => {
                 setData(response);
                 setPageNum(prev => prev + 1);
                 setLoading(false);
-                console.log(response);
             });
     }, [query, pageNum]);
 

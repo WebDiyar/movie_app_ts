@@ -1,26 +1,3 @@
-interface Genre {
-    id: number;
-    name: string;
-}
-
-interface ProductionCompany {
-    id: number;
-    logo_path: string | null;
-    name: string;
-    origin_country: string;
-}
-
-interface ProductionCountry {
-    iso_3166_1: string;
-    name: string;
-}
-
-interface SpokenLanguage {
-    english_name: string;
-    iso_639_1: string;
-    name: string;
-}
-
 export interface MovieDetails {
     adult: boolean;
     backdrop_path: string | null;
@@ -47,4 +24,27 @@ export interface MovieDetails {
     video: boolean;
     vote_average: number;
     vote_count: number;
+}
+
+interface Genre {
+    id: number;
+    name: string;
+}
+
+interface ProductionCompany {
+    id: number;
+    logo_path: string | null;
+    name: string;
+    origin_country: string;
+}
+
+interface ProductionCountry {
+    iso_3166_1: string;
+    name: string;
+}
+
+interface SpokenLanguage {
+    english_name: string;
+    iso_639_1: string;
+    name: string;
 }

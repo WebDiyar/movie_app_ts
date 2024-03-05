@@ -7,8 +7,8 @@ export interface MovieAndTvVideo {
     size: number;
     type: string;
     official: boolean;
-    published_at?: string; // This field is optional
     id: string;
+    published_at?: string;
 }
 
 export interface MovieAndTvVideoResponse{

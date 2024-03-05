@@ -29,4 +29,4 @@ export const useFetch = <T>(url: string): FetchResponse<T> => {
     }, [url]);
 
     return { data, loading, error };
-}
+};

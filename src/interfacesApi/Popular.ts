@@ -1,3 +1,17 @@
+export interface MovieResponse {
+    page: number;
+    results: MoviePopular[];
+    total_pages: number;
+    total_results: number;
+}
+
+export interface TVShowResponse {
+    page: number;
+    results: TVShowPopular[];
+    total_pages: number;
+    total_results: number;
+}
+
 export interface MoviePopular {
     adult: boolean;
     backdrop_path: string;
@@ -15,13 +29,6 @@ export interface MoviePopular {
     vote_count: number
 }
 
-export interface MovieResponse {
-    page: number;
-    results: MoviePopular[];
-    total_pages: number;
-    total_results: number;
-}
-
 export interface TVShowPopular {
     adult: boolean;
     backdrop_path: string;
@@ -37,11 +44,4 @@ export interface TVShowPopular {
     name: string;
     vote_average: number;
     vote_count: number;
-}
-
-export interface TVShowResponse {
-    page: number;
-    results: TVShowPopular[];
-    total_pages: number;
-    total_results: number;
 }

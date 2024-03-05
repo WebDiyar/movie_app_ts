@@ -2,8 +2,8 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../store/store";
 import { Cast } from "../../../interfacesApi/MovieAndTvCredits";
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
+import avatar from "/assets/avatar.png";
 import Img from "../../../components/lazyLoadImage/Img";
-import avatar from "../../../../public/assets/avatar.png";
 import "./cast.scss";
 
 interface Props {
@@ -23,6 +23,7 @@ const CastComponent = ({ data, loading }: Props) => {
             </div>
         );
     };
+    
     return (
         <div className="castSection">
             <ContentWrapper>

@@ -3,8 +3,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { HiOutlineSearch } from "react-icons/hi";
 import { SlMenu } from "react-icons/sl";
 import { VscChromeClose } from "react-icons/vsc";
-import logo from '/assets/movix-logo.svg';
 import ContentWrapper from '../contentWrapper/ContentWrapper';
+import logo from '/assets/movix-logo.svg';
 import './header.scss';
 
 const Header = () => {
@@ -51,18 +51,6 @@ const Header = () => {
       }, 1000);
     }
   }
-
-  // const handleNavigation = (type: string) => {
-  //   if (type === "movie") {
-  //     navigate("/explore/movie");
-  //   } else if (type === "tv") {
-  //     navigate(`/explore/tv`)
-  //   } else if (type === "home") {
-  //     navigate(`/`)
-  //   } 
-
-  //   setMobileMenu(false)
-  // }
 
   const openSearch = () => {
     setMobileMenu(false);

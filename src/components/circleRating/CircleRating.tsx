@@ -2,7 +2,11 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import './circleRating.scss';
 
-const CircleRating = ({ rating }: {rating: number}) => {
+interface Props{
+    rating: number;
+}
+
+const CircleRating = ({ rating }: Props) => {
     return (
         <div className="circleRating">
             <CircularProgressbar

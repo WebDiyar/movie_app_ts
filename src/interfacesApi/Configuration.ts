@@ -1,3 +1,7 @@
+export interface Configuration {
+    images: Images;
+    change_keys: string[];
+}
 interface Images {
     base_url: string;
     secure_base_url: string;
@@ -6,8 +10,4 @@ interface Images {
     poster_sizes: string[];
     profile_sizes: string[];
     still_sizes: string[];
-}
-export interface Configuration {
-    images: Images;
-    change_keys: string[];
 }

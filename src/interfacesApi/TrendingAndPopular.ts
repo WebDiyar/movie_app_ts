@@ -17,5 +17,5 @@ export interface GeneralMedia {
     title?: string;
     name?: string;
     video?: boolean;
-    media_type?: string; // Assuming this might be added dynamically or is specific to certain types
+    media_type?: string;
 }

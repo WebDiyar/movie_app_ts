@@ -1,3 +1,11 @@
+export interface UpcomingResponseApi {
+    dates: Dates;
+    page: number;
+    results: Movie[];
+    total_pages: number;
+    total_results: number;
+}
+
 interface Movie {
     adult: boolean;
     backdrop_path: string;
@@ -18,12 +26,4 @@ interface Movie {
 interface Dates {
     maximum: string;
     minimum: string;
-}
-
-export interface UpcomingResponseApi {
-    dates: Dates;
-    page: number;
-    results: Movie[];
-    total_pages: number;
-    total_results: number;
 }
