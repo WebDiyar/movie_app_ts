@@ -4,7 +4,7 @@ import { fetchingDataFromApi } from "../utils/api";
 interface FetchResponse<T> {
     data: T | null;
     loading: string | boolean | null;
-    error: string | null;
+    error?: string | null;
 }
 
 export const useFetch = <T>(url: string): FetchResponse<T> => {

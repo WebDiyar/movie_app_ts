@@ -52,17 +52,17 @@ const Header = () => {
     }
   }
 
-  const handleNavigation = (type: string) => {
-    if (type === "movie") {
-      navigate("/explore/movie");
-    } else if (type === "tv") {
-      navigate(`/explore/tv`)
-    } else if (type === "home") {
-      navigate(`/`)
-    } 
+  // const handleNavigation = (type: string) => {
+  //   if (type === "movie") {
+  //     navigate("/explore/movie");
+  //   } else if (type === "tv") {
+  //     navigate(`/explore/tv`)
+  //   } else if (type === "home") {
+  //     navigate(`/`)
+  //   } 
 
-    setMobileMenu(false)
-  }
+  //   setMobileMenu(false)
+  // }
 
   const openSearch = () => {
     setMobileMenu(false);
@@ -77,13 +77,13 @@ const Header = () => {
   return (
     <header className={`header ${mobileMenu ? 'mobileView' : ''} ${show}`}>
       <ContentWrapper>
-        <div className="logo">
-          <img src={logo} alt="logo" onClick={() => handleNavigation("home") } />
+        <div className="logo" onClick={() => navigate("/")} >
+          <img src={logo} alt="logo"/>
         </div>
 
         <ul className="menuItems">
-          <li className="menuItem" onClick={() => handleNavigation("movie")}>Movies</li>
-          <li className="menuItem" onClick={() => handleNavigation("tv")}>TV Shows</li>
+          <li className="menuItem">Movies</li>
+          <li className="menuItem">TV Shows</li>
           <li className="menuItem">
             <HiOutlineSearch onClick={openSearch} />
           </li>

@@ -1,3 +1,10 @@
+export interface AllDataMovieOrTvDetails{
+    page: number;
+    results: MovieOrTvDetails[];
+    total_pages: number;
+    total_results: number;
+}
+
 export interface MovieOrTvDetails {
     adult: boolean;
     backdrop_path: string | null;
@@ -40,6 +47,8 @@ export interface MovieOrTvDetails {
     number_of_episodes?: number; // Specific to TV shows
     number_of_seasons?: number; // Specific to TV shows
     origin_country?: string[]; // Specific to TV shows
+    media_type: string;
+    genre_ids?: number[] | undefined; 
 }
 
 interface Genre {

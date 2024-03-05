@@ -1,7 +1,7 @@
 export interface GeneralMedia {
     adult: boolean;
     backdrop_path: string | null;
-    genre_ids: number[];
+    genre_ids: number[] | undefined;
     id: number;
     original_language: string;
     overview: string;

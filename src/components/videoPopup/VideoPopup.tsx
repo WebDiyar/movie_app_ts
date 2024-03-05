@@ -8,7 +8,6 @@ interface Props {
     setVideoId: React.Dispatch<React.SetStateAction<string | number | null | undefined>>;
 }
 
-
 const VideoPopup = ({ show, setShow, videoId, setVideoId }: Props) => {
     const hidePopup = () => {
         setShow(false);
