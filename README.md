@@ -5,7 +5,7 @@ Welcome to the Movie App, a dynamic and engaging web application built with `Rea
 
 ## Demo
 
-Live demo: [DEMO](https://movie-app-beryl-five.vercel.app/)
+Live demo: [DEMO](https://movie-app-teal-beta.vercel.app/).
 
 
 ## Features
