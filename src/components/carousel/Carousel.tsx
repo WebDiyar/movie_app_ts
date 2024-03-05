@@ -6,11 +6,11 @@ import dayjs from "dayjs";
 import { RootState } from "../../store/store";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import Img from "../lazyLoadImage/Img";
-import PosterFallback from "../../../public/assets/no-poster.png";
+import PosterFallback from "/assets/no-poster.png";
 // import { Movie } from "../../interfacesApi/Trending";
 // import { MoviePopular, TVShowPopular } from "../../interfacesApi/Popular";
 // import { MoviePopular, TVShowPopular, Movie } from "../../interfacesApi/TrendingPopular";
-import { GeneralMedia } from "../../interfacesApi/TrendingPopular";
+import { GeneralMedia } from "../../interfacesApi/TrendingAndPopular";
 import CircleRating from "../circleRating/CircleRating";
 import Genres from "../genres/Genres";
 import "./carousel.scss"

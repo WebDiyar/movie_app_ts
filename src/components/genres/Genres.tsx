@@ -3,7 +3,7 @@ import { RootState } from "../../store/store";
 import "./genre.scss"
 
 interface IGenres_id{
-  data: number[];
+  data: number[] | undefined;
 }
 
 const Genres = ({ data }: IGenres_id) => {
