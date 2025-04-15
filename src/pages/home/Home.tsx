@@ -1,19 +1,18 @@
-
-import HeroBanner from './heroBanner/HeroBanner'
-import Trendig from './trending/Trendig'
-import Popular from './popular/Popular'
-import TopRated from './TopRated/TopRated'
-import './home.scss'
+import HeroBanner from "./heroBanner/HeroBanner";
+import Trendig from "./trending/Trendig";
+import Popular from "./popular/Popular";
+import TopRated from "./TopRated/TopRated";
+import "./home.scss";
 
 const Home = () => {
   return (
-    <div className='homePage'>
+    <div className="homePage">
       <HeroBanner />
       <Trendig />
       <Popular />
-      <TopRated/>
+      <TopRated />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

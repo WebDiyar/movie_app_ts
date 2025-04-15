@@ -1,11 +1,11 @@
 export interface Genres {
-    genres: Genre[];
+  genres: Genre[];
 }
 export interface Genre {
-    id: number;
-    name: string;
+  id: number;
+  name: string;
 }
 
 export interface AllGenres {
-    [key: number]: Genre
+  [key: number]: Genre;
 }

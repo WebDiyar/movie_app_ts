@@ -1,16 +1,12 @@
-import { ReactNode } from 'react'; 
-import './contentWrapper.scss';
+import { ReactNode } from "react";
+import "./contentWrapper.scss";
 
 interface ContentWrapperProps {
-    children: ReactNode; 
+  children: ReactNode;
 }
 
 const ContentWrapper = ({ children }: ContentWrapperProps) => {
-    return (
-        <div className="contentWrapper">
-            {children}
-        </div>
-    );
+  return <div className="contentWrapper">{children}</div>;
 };
 
 export default ContentWrapper;
